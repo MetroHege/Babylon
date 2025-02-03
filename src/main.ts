@@ -1,9 +1,7 @@
 import {
   ArcRotateCamera,
   Engine,
-  FreeCamera,
   HemisphericLight,
-  Mesh,
   MeshBuilder,
   Scene,
   SceneLoader,
