@@ -8,6 +8,15 @@
   </head>
   <body>
     <canvas id="renderCanvas"></canvas>
+    <button id="openModalBtn">Open Video</button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <video controls src="./Kahvikuppi.mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,0 +1,2 @@
+# Pakotetaan selaimet tarkistamaan MIME-tyypit
+Header set X-Content-Type-Options "nosniff"
