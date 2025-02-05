@@ -48,9 +48,9 @@ const createScene = () => {
   SceneLoader.ImportMeshAsync("splat", "./", "clstesti.splat", scene).then(
     (result) => {
       const splat2 = result.meshes[0];
-      splat2.position = new Vector3(2, 1.35, 0);
-      splat2.scaling = new Vector3(0.5, 0.5, 0.5); // Adjust the scale as needed
-      splat2.rotation = new Vector3(0, Math.PI / 4, 0); // Adjust the rotation as needed
+      splat2.position = new Vector3(0, 1.35, 0);
+      splat2.scaling = new Vector3(0.3, 0.3, 0.3); // Adjust the scale as needed
+      splat2.rotation = new Vector3(15, Math.PI / 4, 1); // Adjust the rotation as needed
     }
   );
 
