@@ -25,24 +25,40 @@ const createScene = () => {
   camera.setTarget(Vector3.Zero());
   camera.attachControl(canvas, false);
   const light = new HemisphericLight("light1", new Vector3(1, 1, 1));
-  // const sphere = MeshBuilder.CreateSphere(
-  //   "sphere1",
-  //   { segments: 16, diameter: 2, sideOrientation: Mesh.FRONTSIDE },
-  //   scene
-  // );
-  // sphere.position.y = 1;
+  console.log(light);
+
   const ground = MeshBuilder.CreateGround(
     "ground1",
     { width: 6, height: 6, subdivisions: 2, updatable: false },
     scene
   );
+  console.log(ground);
 
-  SceneLoader.ImportMeshAsync("splat", "./", "clstesti.splat", scene).then(
-    (result) => {
-      const splat = result.meshes[0];
-      splat.position = new Vector3(0, 1.35, 0);
-    }
-  );
+  // Load first splat
+  SceneLoader.ImportMeshAsync(
+    "splat",
+    "./public/",
+    "untitled.splat",
+    scene
+  ).then((result) => {
+    const splat1 = result.meshes[0];
+    splat1.position = new Vector3(-1.5, 5, 1.5);
+    splat1.scaling = new Vector3(2.0, 2.0, 2.0); // Adjust the scale as needed
+    splat1.rotation = new Vector3(0, Math.PI / 4, 0); // Adjust the rotation as needed
+  });
+
+  // Load second splat
+  SceneLoader.ImportMeshAsync(
+    "splat",
+    "./public/",
+    "clstesti.splat",
+    scene
+  ).then((result) => {
+    const splat2 = result.meshes[0];
+    splat2.position = new Vector3(2, 1.35, 0);
+    splat2.scaling = new Vector3(0.5, 0.5, 0.5); // Adjust the scale as needed
+    splat2.rotation = new Vector3(0, Math.PI / 4, 0); // Adjust the rotation as needed
+  });
 
   return scene;
 };
